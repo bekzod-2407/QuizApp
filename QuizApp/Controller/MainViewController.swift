@@ -14,19 +14,15 @@ class MainViewController: UIViewController {
     private lazy var mainContentView:  MainView =  {
         var view = MainView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         return view
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubViews()
-        view.backgroundColor = Colors.mainColor.color
     }
-    
-    
-    private func setupSubViews() {
+     private func setupSubViews() {
         view.addSubview(mainContentView)
-        updateUI()
+        view.backgroundColor = Colors.mainColor.color
         NSLayoutConstraint.activate([
             mainContentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainContentView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -39,36 +35,27 @@ class MainViewController: UIViewController {
     
 //MARK: - Logic functions
     @objc func buttonTapped(_ btn: UIButton) {
-       
-        let title = btn.currentTitle
-        quizBrain.checkAnswer(title)
         btn.alpha = 0.7
-        if title == answer {
+        guard let title = btn.currentTitle else {return}
+        
+       let rightAnswer = quizBrain.checkAnswer(title)
+       
+        if rightAnswer {
             btn.backgroundColor = Colors.greenColor.color
-            
-           rightAnswerCount += 1
         } else {
             btn.backgroundColor =  Colors.redColor.color
         }
-        if quizNumber < quiz.count-1{
-           
-           quizNumber += 1
-        } else {
-            rightAnswerCount = 0
-            quizNumber = 0
-        }
-        
+        quizBrain.nextQuestion()
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: false)
         updateUI()
     }
-    
     private func updateUI() {
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: false)
-        mainContentView.questionLabel.text = quiz[quizNumber].question
+        mainContentView.scoreLabel.text = quizBrain.getScore()
+        mainContentView.questionCountLabel.text = quizBrain.getCurrentQuestionNumber()
+        mainContentView.questionLabel.text = quizBrain.getQuestion()
+        mainContentView.progressBar.progress = quizBrain.getProgress()
     }
-    @objc func updateTimer() {
-        mainContentView.scoreLabel.text = "Score: \(rightAnswerCount)"
-        mainContentView.questionCountLabel.text = "  Question: \(quizNumber+1)"
-        mainContentView.progressBar.progress = Float(quizNumber + 1) / Float(quiz.count)
+    @objc private func updateTimer() {
         mainContentView.falseButton.backgroundColor = .clear
         mainContentView.trueButton.backgroundColor = .clear
         mainContentView.falseButton.alpha = 1

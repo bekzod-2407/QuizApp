@@ -24,12 +24,34 @@ struct QuizBrain {
         Question(q: "No piece of square dry paper can be folded in half more than 7 times.", a: "FALSE"),
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "TRUE")
     ]
-    
-    func  checkAnswer(_ answer: String) {
+    func  getCurrentQuestionNumber() -> String {
+       return  "Question: \(quizNumber)"
+   }
+    mutating func  checkAnswer(_ answer: String) -> Bool {
         if answer == quiz[quizNumber].answer {
-            
+            rightAnswerCount += 1
+            return true
         } else {
-            
+            return false
         }
+    }
+    
+    func  getQuestion() -> String {
+        return quiz[quizNumber].question
+    }
+    func  getProgress() -> Float {
+        return  Float(quizNumber + 1) / Float(quiz.count)
+    }
+    func  getScore() -> String {
+        return  "Score: \(rightAnswerCount)"
+    }
+    mutating func  nextQuestion() {
+        if quizNumber < quiz.count-1{
+            quizNumber += 1
+        } else {
+            rightAnswerCount = 0
+            quizNumber = 0
+        }
+        
     }
 }
