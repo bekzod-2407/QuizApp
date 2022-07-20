@@ -9,16 +9,24 @@ import UIKit
 
 class MainView: UIView {
     private lazy var mainStack: UIStackView = {
-        var view = UIStackView(arrangedSubviews: [scoreLabel,questionLabel,buttonStack])
+        var view = UIStackView(arrangedSubviews: [labelStack,questionLabel,buttonStack])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.spacing = 20
         view.distribution = .fill
         return view
     }()
-
- 
-     lazy var scoreLabel: UILabel = {
+    private lazy var labelStack: UIStackView = {
+        var view = UIStackView(arrangedSubviews: [scoreLabel,questionCountLabel])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .horizontal
+        view.spacing = 20
+        view.distribution = .fillEqually
+        return view
+    }()
+    
+    
+    lazy var scoreLabel: UILabel = {
         var view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Score 0"
@@ -28,8 +36,19 @@ class MainView: UIView {
         view.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return view
     }()
+    lazy var questionCountLabel: UILabel = {
+        var view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Question: 0"
+        view.textAlignment = .right
+        view.font = .monospacedSystemFont(ofSize: 18, weight: .medium)
+        view.textColor = .systemGray6
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        view.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        return view
+    }()
     
-     lazy var questionLabel: UILabel = {
+    lazy var questionLabel: UILabel = {
         var view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "What's your name What's your name What's your nameWhat's your name What's your name"
@@ -48,24 +67,28 @@ class MainView: UIView {
         return view
     }()
     
-     lazy var trueButton: UIButton = {
+    lazy var trueButton: UIButton = {
         var view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("TRUE", for: .normal)
         view.tintColor = .black
         view.titleLabel?.font = .monospacedSystemFont(ofSize: 24, weight: .semibold)
         view.layer.borderWidth = 3
+        view.alpha = 1
+        view.backgroundColor = .clear
         view.layer.borderColor = CGColor(red: 107, green: 219, blue: 153, alpha: 1)
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
         return view
     }()
-     lazy var falseButton: UIButton = {
+    lazy var falseButton: UIButton = {
         var view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("FALSE", for: .normal)
         view.titleLabel?.font = .monospacedSystemFont(ofSize: 24, weight: .semibold)
         view.layer.borderWidth = 3
+        view.alpha = 1
+        view.backgroundColor = .clear
         view.layer.borderColor = CGColor(red: 107, green: 215, blue: 153, alpha: 1)
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
@@ -73,15 +96,15 @@ class MainView: UIView {
     }()
     
     lazy var progressBar: UIProgressView = {
-       var view = UIProgressView()
-       view.translatesAutoresizingMaskIntoConstraints = false
-        view.progress = 0.5
+        var view = UIProgressView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.progress = 0
         view.progressTintColor = .systemPink
         view.trackTintColor = Colors.labelColor.color
         view.layer.cornerRadius = 15
         view.clipsToBounds =  true
-       return view
-   }()
+        return view
+    }()
     
     lazy var bgImage: UIImageView = {
         var view = UIImageView()
@@ -99,7 +122,7 @@ class MainView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-       
+        
     }
     
     private func setupSubViews() {
@@ -121,5 +144,5 @@ class MainView: UIView {
             bgImage.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
-
+    
 }
