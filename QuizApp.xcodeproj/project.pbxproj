@@ -25,7 +25,7 @@
 		CEA0E7222887ABCB008EB020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA0E7292887ADD6008EB020 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CEA0E72E2887B142008EB020 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CEA0E7322887BE75008EB020 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		CEA0E7322887BE75008EB020 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = QuizApp/.gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,6 @@
 		CEA0E7082887ABCA008EB020 = {
 			isa = PBXGroup;
 			children = (
-				CEA0E7322887BE75008EB020 /* .gitignore */,
 				CEA0E7132887ABCB008EB020 /* QuizApp */,
 				CEA0E7122887ABCB008EB020 /* Products */,
 			);
@@ -65,6 +64,7 @@
 				CEA0E72E2887B142008EB020 /* Constants.swift */,
 				CEA0E71D2887ABCB008EB020 /* Assets.xcassets */,
 				CEA0E71F2887ABCB008EB020 /* LaunchScreen.storyboard */,
+				CEA0E7322887BE75008EB020 /* .gitignore */,
 				CEA0E7222887ABCB008EB020 /* Info.plist */,
 			);
 			path = QuizApp;
