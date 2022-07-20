@@ -95,7 +95,7 @@ class MainView: UIView {
             mainStack.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -10),
             
             trueButton.heightAnchor.constraint(equalToConstant: 60),
-            falseButton.heightAnchor.constraint(equalToConstant: 60)
+            falseButton.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
 

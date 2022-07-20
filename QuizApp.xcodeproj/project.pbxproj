@@ -12,8 +12,8 @@
 		CEA0E71E2887ABCB008EB020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA0E71D2887ABCB008EB020 /* Assets.xcassets */; };
 		CEA0E7212887ABCB008EB020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA0E71F2887ABCB008EB020 /* LaunchScreen.storyboard */; };
 		CEA0E72A2887ADD6008EB020 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0E7292887ADD6008EB020 /* MainView.swift */; };
-		CEA0E72D2887B054008EB020 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CEA0E72C2887B054008EB020 /* .gitignore */; };
 		CEA0E72F2887B142008EB020 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0E72E2887B142008EB020 /* Constants.swift */; };
+		CEA0E7332887BE75008EB020 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CEA0E7322887BE75008EB020 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		CEA0E7202887ABCB008EB020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEA0E7222887ABCB008EB020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA0E7292887ADD6008EB020 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		CEA0E72C2887B054008EB020 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CEA0E72E2887B142008EB020 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CEA0E7322887BE75008EB020 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +42,7 @@
 		CEA0E7082887ABCA008EB020 = {
 			isa = PBXGroup;
 			children = (
+				CEA0E7322887BE75008EB020 /* .gitignore */,
 				CEA0E7132887ABCB008EB020 /* QuizApp */,
 				CEA0E7122887ABCB008EB020 /* Products */,
 			);
@@ -65,7 +66,6 @@
 				CEA0E71D2887ABCB008EB020 /* Assets.xcassets */,
 				CEA0E71F2887ABCB008EB020 /* LaunchScreen.storyboard */,
 				CEA0E7222887ABCB008EB020 /* Info.plist */,
-				CEA0E72C2887B054008EB020 /* .gitignore */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA0E7212887ABCB008EB020 /* LaunchScreen.storyboard in Resources */,
-				CEA0E72D2887B054008EB020 /* .gitignore in Resources */,
+				CEA0E7332887BE75008EB020 /* .gitignore in Resources */,
 				CEA0E71E2887ABCB008EB020 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
