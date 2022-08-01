@@ -1,5 +1,5 @@
 # QuizApp
-simple QuizApp  with MVC  architecture. Created UI programmatically 
+simple QuizApp  with MVC  architecture. Created UI programmatically   
 
 
 
